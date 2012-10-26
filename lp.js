@@ -8,7 +8,7 @@ $(function() {
 	    $batchMarklet = $('#batchMarklet'),
 	    delButSel     = '.delButton',
 	    entrySel      = '.scriptEntry',
-	    markletSrc    = 'file:///Users/adhorton/Projects/launchpad/launcher.js',
+	    markletSrc    = 'http://digitalicarus.github.com/launchpad/',
 	    tmpl          = {};
 
 	function createMarklet(daScripts) {
