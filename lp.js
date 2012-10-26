@@ -13,7 +13,7 @@ $(function() {
 
 	function createMarklet(daScripts) {
 		//-- load localStorage and cache bust the script load
-		function daFunk() {
+		var daFunk = function() {
 			var s  = localStorage,
 				d  = document,
 				h  = document.getElementsByTagName('head')[0];
@@ -32,7 +32,7 @@ $(function() {
 				'__store__';
 				l('__src__');
 			}
-		}
+		};
 
 		var launchMarklet = "",
 		    batchMarklet = "",
