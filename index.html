@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>LaunchPad</title>
+		<link href='http://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="normalize.css" />
+		<link rel="stylesheet" type="text/css" href="lp.css" />
+	</head>
+	<body>
+		<script id="scriptTmpl" type="text/doT">
+			<fieldset class="scriptEntry" id="script_{{=it.num}}">
+				<legend><label><input class="nameVal" type="text" /></label></legend>
+				<label>src <input class="srcVal" type="text" required /></label>
+				<button class="delButton">x</button>
+			</fieldset>
+		</script>
+
+		<script id="launcherTmpl" type="text/doT">
+			<div id=""></div>
+		</script>
+
+		<!-- MAIN -->
+		<div id="main">
+			<header title="image by rongs1234 of deviantArt">
+				<a href="http://rongs1234.deviantart.com/art/Launchpad-McQuack-bust-sketch-200771071">
+					<img src="lp.png" />
+				</a>
+				<h1>LaunchPad</h1>
+				<aside>A bookmarklet script loader</aside>
+			</header>
+		<div id="content">
+			<p>
+				LaunchPad creates two kinds of bookmarklets
+				<ol>
+					<li>A launcher where you can choose scripts to load</li>
+					<li>A batch launcher that just loads all of the scripts in the list</li>
+				</ol>
+				Also, I'll store 'em in local storage in case you want to come back and edit.
+			</p>
+			<div id="daBuilder">
+				<p class="marklets">
+					<a id="marklet" href="" title="drag me to your bookmarks bar!">launchpad</a>
+					<a id="batchMarklet" href="" title="drag me to your bookmarks bar!">launchpad: batch</a>
+				</p>
+
+				<button id="addScript">add</button>
+				<button id="loadScripts">load from storage</button>
+				<div class="clearfix">&nbsp;</div>
+			</div>
+
+			<pre id="scriptSrc">
+			</pre>
+			
+			
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+			<script src="doT.js"></script>
+			<script src="lp.js"></script>
+		</div>
+		</div>
+	</body>
+</html>
