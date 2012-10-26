@@ -17,7 +17,6 @@ $(function() {
 			var s  = localStorage,
 				d  = document,
 				h  = document.getElementsByTagName('head')[0];
-			window.__lp = '__lp_data__';
 			function l(s) {
 				var b  = (Math.random()*1e8>>0),
 				    j  = d.createElement('script'),
@@ -29,7 +28,7 @@ $(function() {
 			}
 			'__batch__';
 			if('__notbatch__') {
-				'__store__';
+				window.__lp = '__lp_data__';
 				l('__src__');
 			}
 		};
@@ -49,8 +48,7 @@ $(function() {
 				.replace(/^\s*/mg, "")
 				.replace(/\s*$/mg, "")
 				.replace(/\s*=\s*/g,"=")
-				.replace(/__src__/, markletSrc)
-				.replace(/'__lp_data__'/, JSON.stringify(daScripts));
+				.replace(/__src__/, markletSrc);
 
 		batchMarklet = launchMarklet;
 		batchMarklet = batchMarklet
@@ -59,7 +57,7 @@ $(function() {
 
 		launchMarklet = launchMarklet
 				.replace(/'__notbatch__'/, "true")
-				//.replace(/'__store__'/, "s.setItem('launchpad', '"+JSON.stringify(daScripts)+"')")
+				.replace(/'__lp_data__'/, JSON.stringify(daScripts));
 
 		launchMarklet = "javascript: ("+launchMarklet.replace(/(\r\n|\n|\r)/gm, "")+")();";
 		batchMarklet  = "javascript: ("+batchMarklet.replace(/(\r\n|\n|\r)/gm, "")+")();";
@@ -96,8 +94,8 @@ $(function() {
 	}
 
 	//-- compile templates
-	$('[type*=doT]').each(function() {
-		tmpl[this.id.replace(/Tmpl/, "")] = doT.compile(this.innerText);
+	$('[type*=doT]').each(function(i,v) {
+		tmpl[v.id.replace(/Tmpl/, "")] = doT.compile(v.text);
 	});
 
 	//-- attach events
