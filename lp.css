@@ -7,7 +7,7 @@ body {
 	height: 100%;
 	background-color: #fafafa;
 }
-input:required:invalid, input:focus:invalid {
+input:required:invalid, input:focus:invalid, input.invalid {
 	border-color: #f44;
 }
 #main {
@@ -54,6 +54,40 @@ header aside {
 	font-size: 0;
 	clear: both;
 }
+.currentLengthContainer strong {
+	margin-right: 1em;
+}
+#limitTableContainer {
+}
+#limitTableContainer table {
+	border-collapse: collapse;
+	border: 1px solid #666;
+}
+#limitTableContainer, #limitTableContainer table {
+	width: 100%;
+}
+#limitTableContainer th {
+	text-align: left;
+}
+#limiTableContainer td {
+	text-align: center;
+}
+#limitTableContainer td, #limitTableContainer th {
+	border: 1px solid #aaa;
+	padding: 3px;
+}
+#limitTableContainer .browserRow {
+}
+#limitTableContainer .overLimit {
+	background-color: #900;
+	color: #fff;
+}
+#limitTableContainer .closeToLimit {
+	background-color: #ff0;
+}
+#limitTableContainer .ok {
+	background-color: #6e6;
+}
 .marklets a, .marklets a:hover, .marklets a:visited {
 	background: #ddd;
 	text-decoration: none;
@@ -87,6 +121,12 @@ fieldset input {
 	/* useful if you don't want a bg color from leaking outside the border: */
 	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box;
 	padding: 2px;
+}
+fieldset.invalid {
+	background: #fcc;
+}
+fieldset input.invalid {
+
 }
 fieldset .delButton {
 	position: absolute;
